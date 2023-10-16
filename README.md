@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# My notes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is where I'll add all my notes throughout my development journey.
 
-## Available Scripts
+## October 16th 2023
 
-In the project directory, you can run:
+On this day, I searched topics regarding Git and GitHub, the differences between the two, how to use them, and their usefulness.
 
-### `npm start`
+### Git and GitHub
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Git and Git are different.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Git is a software, a memomry card for codes, used to save all your coding progress locally on your PC.
 
-### `npm test`
+GitHub is a website, used to store all your coding saved progress from your PC on the internet.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Git commands
 
-### `npm run build`
+Git has so many commands, most notably:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**git init: It initializes your project, basically starting a new repository where your project will be located.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**git add: It adds new or changed files in your project to Git, saving your progress, you cann save everything by typing "git add .".
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**git commut: It commits these changes to memory with a message describing their implementation "git commit -m 'change description'".
 
-### `npm run eject`
+**git push: It is used to upload local repository content to a remote repository, transferring your commits from your local repository to a remote repo, with this all your progress is stored in GitHub.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+#### GitHub features
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+GitHub has so many features, most notably the branches.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Branche: A copied version of your repository where you can modify, fix bugs, and experiment without the risk of altering your main code.
+With branches, multiple people can access and use your project, as well as modify it without altering the original version, making it very easy to share the code with others without losing track.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Git and GitHub with Visuel Studio Code
 
-## Learn More
+#### Porting your folder from GitHub to VS code
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+After creating a GitHub account, you can see a section that stores all your project folders, aka repositories, an option called New is also available, and once pressed, it will direct you to start a new repository.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Once the repository is created, go to VS Code, open a new window, choose the folder created in GitHub and add it, once added, install Git on your OS.
 
-### Code Splitting
+In order to use Git and GitHub on VS Code, you need to install Git first on your system, this will let you to have access to Git commands, allowing you to commit and push all the changes made to your code in VS to GitHub.
+In my case, I installed the 64-bit version.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Once Git is installed, open the terminal and sign in with your GitHub account by writing the following:
+" git config user.name "your GitHub name" 
+  git config user.email "your GitHub email adress" "
 
-### Analyzing the Bundle Size
+You will be connected to your account, it's a one-and-done operation that doesn't need to be repeated each time you open VS code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+If all the setup has been done successfully so far, you can start coding.
 
-### Making a Progressive Web App
+Every time you want to save your progress, you will need to commit all the changes you've made to your project and push them, in order to do so, go to Source Control.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+##### Source Control
 
-### Advanced Configuration
+Committing and pushing to your GitHub repository is straightforward, On the left side of the screen on VS Code, the Source Control option can be visible, and once clicked, you will be directed to a new page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+On the new page, you will find a message bar and a commit button, once you add new modifications, whether it is a brand new file, or folder added, or a change to your existing files, you will get a new section called Changes.
 
-### Deployment
+In the Changes section, all modifications and additions are found, you will also notice symbols on each change like M for modified and U for untracked, they are self-explanatory, press the + icon next to them and they will go to a new section named Staged Changes.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+When all changes chosen are added to Staged Changes, add a detailed message on the message bar and click on either Commit or the valid icon above, once this is done, a new Sync Changes button appears, you can click to finally push all your commits, or click the 3 dots and press the Push option, both are the same.
