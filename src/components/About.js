@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import './About.css'
 
-function About() {
+const About = () => {
   return (
     <div>
       
@@ -9,3 +10,4 @@ function About() {
 }
 
 export default About
+

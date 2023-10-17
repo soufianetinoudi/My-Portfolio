@@ -1,6 +1,7 @@
-import React from 'react'
+import React from 'react';
+import './Contact.css'
 
-function Contact() {
+const Contact = () => {
   return (
     <div>
       
@@ -9,3 +10,4 @@ function Contact() {
 }
 
 export default Contact
+
