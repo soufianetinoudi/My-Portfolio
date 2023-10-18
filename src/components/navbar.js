@@ -1,8 +1,8 @@
-import React from 'react';
-import './Navbar.css';
-import mainLogo from '../assets/placeholder-colored.png' //porting the logo from assets folder to be used here
-import contactBtnIcon from '../assets/letter-icon-png-10.jpg'
-import { Link } from 'react-scroll'
+import React from "react";
+import "./Navbar.css";
+import mainLogo from "../assets/placeholder-colored.png"; //porting the logo from assets folder to be used here
+import contactBtnIcon from "../assets/letter-icon-png-10.jpg";
+import { Link } from "react-scroll"; //Using links for page navigation
 
 const Navbar = () => {
   return (
@@ -15,11 +15,10 @@ const Navbar = () => {
         <Link className="desktopMenuListItem">Clients</Link>
       </div>
       <button className="desktopMenuBtn">
-        <img src={contactBtnIcon} alt="" className="desktopMenuImg" /> Contact
-        Me
+        <img src={contactBtnIcon} alt="" className="desktopMenuImg" />Contact Me
       </button>
     </nav>
   );
-}
+};
 
-export default Navbar
+export default Navbar;
