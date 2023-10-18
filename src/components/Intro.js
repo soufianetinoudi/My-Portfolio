@@ -2,7 +2,7 @@ import React from "react";
 import "./Intro.css";
 import devImg from "../assets/img_intro_security.png";
 import { Link } from "react-scroll";
-import btnBagIcon from "../assets/3198621-200.png"
+import btnBagIcon from "../assets/3198621-200.png";
 
 const Intro = () => {
   return (
