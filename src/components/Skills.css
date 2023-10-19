@@ -41,7 +41,7 @@
     margin: 1rem;
     padding: 1.5rem 2rem;
     border-radius: 0.5rem;
-    background: gray;
+    background: rgb(40, 40, 40);
 }
 
 /*Resizing skill bar images*/
@@ -69,10 +69,12 @@
     .skillBarText>p {
         font-size: 3vw;
     }
+
     .skillBarImg {
         height: 2.25rem;
         width: 2.25rem;
     }
+
     .skillBarText {
         font-size: 3vw;
     }
