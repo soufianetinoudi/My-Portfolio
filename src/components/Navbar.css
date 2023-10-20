@@ -51,3 +51,52 @@
     width: 1rem;
     margin: 1rem;
 }
+
+/*When user scrolls to a particular section of the page, the name of chosen section will be yellow*/
+.active {
+    color: yellow;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid yellow;
+}
+
+/*Style to hide burger menu on wide screens and show it only on small screens mobile
+How will it be shown on mobile screen is by simply through responsive @media*/
+.myBurgerMenu {
+    display: none;
+    object-fit: cover;
+    height: 1.8rem;
+}
+
+ /*Nav menu style for mobile screens, it will only appears on those screens*/
+.navMenu {
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+    height: fit-content;
+    min-width: 15rem;
+    background: rgb(40, 40, 40);
+}
+
+/*List item style inside navbar*/
+.listItem {
+    color: white;
+    padding: 0.5rem 3rem;
+    margin: 0.25rem;
+    background: rgb(30, 30, 30);
+}
+
+@media screen and (max-width:720px) {
+    .myBurgerMenu {
+        display: flex;
+    }
+    .desktopMenuListItem {
+        display: none;
+    }
+    .desktopMenuBtn {
+        display: none;
+    }
+}
