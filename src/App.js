@@ -23,10 +23,10 @@ const comments = {
               id: 1677252449713,
               name: "hello world 123",
               items: [],
-            }
-          ]
-        }
-      ]
+            },
+          ],
+        },
+      ],
     },
     {
       id: 1677252457839,
@@ -35,11 +35,11 @@ const comments = {
         {
           id: 1677252468098,
           name: "javaScript",
-          items: []
-        }
-      ]
-    }
-  ]
+          items: [],
+        },
+      ],
+    },
+  ],
 };
 
 function App() {
@@ -53,7 +53,7 @@ function App() {
       <Works />
       <Contact />
       <div className="App">
-        <Comment comment={commentsData}/>
+        <Comment comment={commentsData} />
       </div>
       <Footer />
     </div>
