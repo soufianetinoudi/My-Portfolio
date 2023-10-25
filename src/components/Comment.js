@@ -5,18 +5,42 @@ import { ReactComponent as DownArrow } from "react";
 import { ReactComponent as UpArrow } from "react";
 import Action from "./Action";
 
-const Comment = ({ comment }) => {
+const Comment = ({
+  comment,
+  handleInsertNode,
+  handleEditNode,
+  handleDeleteNode,
+}) => {
   const [input, setInput] = useState("");
   const [editMode, setEditMode] = useState(false);
   const [showInput, setShowInput] = useState(false);
-  const [expand, setExpand] = useState(false);
+  const [expand, setExpand] = useState(true);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef?.current?.focus();
+  }, [editMode]);
 
   const handleNewComment = () => {
     setExpand(!expand);
     setShowInput(true);
   };
 
-  const onAddComment = () => {};
+  const onAddComment = () => {
+    if (editMode) {
+      handleEditNode(comment.id, inputRef?.current?.innerText);
+    } else {
+      setExpand(true);
+      handleInsertNode(comment.id, input);
+      setShowInput(false);
+      setInput("");
+    }
+    if (editMode) setEditMode(false);
+  };
+
+  const handleDelete = () => {
+    handleDeleteNode(comment.id);
+  };
 
   return (
     <div>
@@ -39,16 +63,29 @@ const Comment = ({ comment }) => {
           </>
         ) : (
           <>
-            <span style={{ wordWrap: "break-word" }}>{comment.name}</span>
+            <span
+              contentEditable={editMode}
+              suppressContentEditableWarning={editMode}
+              style={{ wordWrap: "break-word" }}
+              ref={inputRef}
+            >
+              {comment.name}
+            </span>
 
             <div style={{ display: "flex", marginTop: "5px" }}>
               {editMode ? (
                 <>
-                  <Action className="reply" type="SAVE" />
+                  <Action
+                    className="reply"
+                    type="SAVE"
+                    handleClick={onAddComment}
+                  />
                   <Action
                     className="reply"
                     type="CANCEL"
                     handleClick={() => {
+                      if (inputRef.current)
+                        inputRef.current.innerText = comment.name;
                       setEditMode(false);
                     }}
                   />
@@ -59,11 +96,7 @@ const Comment = ({ comment }) => {
                     className="reply"
                     type={
                       <>
-                        {expand ? (
-                          <UpArrow width="10px" height="10px" />
-                        ) : (
-                          <DownArrow width="10px" height="10px" />
-                        )}{" "}
+                        {expand}
                         REPLY
                       </>
                     }
@@ -76,7 +109,11 @@ const Comment = ({ comment }) => {
                       setEditMode(true);
                     }}
                   />
-                  <Action className="reply" type="DELETE" />
+                  <Action
+                    className="reply"
+                    type="DELETE"
+                    handleClick={handleDelete}
+                  />
                 </>
               )}
             </div>
@@ -105,7 +142,15 @@ const Comment = ({ comment }) => {
           </div>
         )}
         {comment?.items?.map((cmnt) => {
-          return <Comment key={cmnt.id} comment={cmnt} />;
+          return (
+            <Comment
+              key={cmnt.id}
+              handleInsertNode={handleInsertNode}
+              handleEditNode={handleEditNode}
+              handleDeleteNode={handleDeleteNode}
+              comment={cmnt}
+            />
+          );
         })}
       </div>
     </div>
