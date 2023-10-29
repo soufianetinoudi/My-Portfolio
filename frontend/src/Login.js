@@ -5,7 +5,7 @@ import Validation from "./LoginValidation";
 // I'm using Bootstrap instead of css file for login, hence why some className have css values, those are possible through Bootstrap
 function Login() {
     const [values, setValues] = useState({
-        email: '', 
+        email: '',
         password: ''
     })
 
