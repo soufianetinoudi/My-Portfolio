@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: "localhost",
+    host: "localhost:3307",
     user: "root",
     password: "",
     database: "signup"
@@ -29,6 +29,20 @@ app.post('/signup', (req, res) => {
     })
 })
 
+//mysql query to select from database after inserting to it
+app.post('/login', (req, res) => {
+    const sql = "SELECT * FROM login WHERE `email` = ? AND `password` = ?";
+    db.query(sql, [req.body.email, req.body.password], (err, data) => {
+      if (err) {
+        return res.json("Error");
+      }
+      if (data.length > 0) {
+        return res.json("Success");
+      } else {
+        return res.json("Failed");
+      }
+    });
+})
 
 app.listen(8081, () => {
     console.log("listening");
