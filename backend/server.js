@@ -7,7 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const db = mysql.createConnection({
-    host: "localhost:3307",
+    host: "localhost",
     user: "root",
     password: "",
     database: "signup"
@@ -47,3 +47,4 @@ app.post('/login', (req, res) => {
 app.listen(8081, () => {
     console.log("listening");
 })
+
